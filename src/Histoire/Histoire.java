@@ -1,7 +1,6 @@
 package Histoire;
 
-import personnages.Humain;
-import personnages.Commercant;
+import personnages.*;
 
 public class Histoire {
 	public static void main(String[] args) {
@@ -12,12 +11,14 @@ public class Histoire {
 		humain1.acheter("metre de pastis", 33);
 		humain1.acheter("metre de pastis", 33);
 		
-		Commercant commercant1 = new Commercant("BarMan", "shot de téquilla", 20);
+		Commercant commercant1 = new Commercant("BarMan", 20);
 		commercant1.direBonjour();
 		commercant1.seFaireExtorquer();
 		commercant1.recevoir(33);
 		commercant1.boire();
 		
-	
+		Yakuza yakuza1 = new Yakuza("Nicolas", "Whisky", 100000, "Les Républicains");
+		yakuza1.direBonjour();
+		yakuza1.extorquer(commercant1);
 	}
 }
