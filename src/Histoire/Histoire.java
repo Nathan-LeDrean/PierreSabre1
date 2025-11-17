@@ -17,8 +17,12 @@ public class Histoire {
 		commercant1.recevoir(33);
 		commercant1.boire();
 		
-		Yakuza yakuza1 = new Yakuza("Nicolas", "Whisky", 100000, "Les Républicains");
+		Yakuza yakuza1 = new Yakuza("Nicolas", "Whisky", 100000, "Les Rï¿½publicains");
 		yakuza1.direBonjour();
 		yakuza1.extorquer(commercant1);
+		
+        Ronin ronin1 = new Ronin("Adam", "Pastis", 60);
+        ronin1.direBonjour();
+        ronin1.donner(commercant1);
 	}
 }
