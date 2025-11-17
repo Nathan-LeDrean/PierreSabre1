@@ -24,5 +24,7 @@ public class Histoire {
         Ronin ronin1 = new Ronin("Adam", "Pastis", 60);
         ronin1.direBonjour();
         ronin1.donner(commercant1);
+        
+        ronin1.provoquer(yakuza1);
 	}
 }
