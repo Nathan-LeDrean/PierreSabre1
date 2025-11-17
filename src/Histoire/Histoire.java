@@ -26,5 +26,17 @@ public class Histoire {
         ronin1.donner(commercant1);
         
         ronin1.provoquer(yakuza1);
+        
+        Commercant commercant2 =  new Commercant("BarMan2", 40);
+        Commercant commercant3 =  new Commercant("BarMan3", 10);
+        
+        commercant1.faireConnaissanceAvec(ronin1);
+        commercant1.faireConnaissanceAvec(yakuza1);
+        commercant1.faireConnaissanceAvec(commercant2);
+        commercant1.faireConnaissanceAvec(commercant3);
+
+        commercant1.listerConnaissance();
+        ronin1.listerConnaissance();
+        yakuza1.listerConnaissance();
 	}
 }

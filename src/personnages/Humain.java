@@ -5,10 +5,15 @@ public class Humain {
 	private String boissonFavorite;
 	private int argent;
 	
+    protected static final int TAILLE_MEMOIRE = 30;   // pour 1d tu passeras Ã  3
+    protected Humain[] memoire;
+    protected int nbConnaissances = 0;
+	
 	public Humain(String nom, String boissonFavorite, int argent) {
 		this.nom = nom;
 		this.boissonFavorite = boissonFavorite;
 		this.argent = argent;
+		this.memoire = new Humain[TAILLE_MEMOIRE];
 	}
     protected void parler(String texte) {
         System.out.println(nom + " - " + "\"" + texte + "\"");
@@ -43,12 +48,47 @@ public class Humain {
     public void acheter(String objet, int prix) {
     	if (argent >= prix) {
     		perdreArgent(prix);
-    		parler("J'ai " + argent + " sous en poche. Je vais pouvoir m'offrir un " + objet + " à " + prix + " sous");
+    		parler("J'ai " + argent + " sous en poche. Je vais pouvoir m'offrir un " + objet + " ï¿½ " + prix + " sous");
     	}else {
-    		parler("Je n'ai plus que " + argent + " sous en poche. Je ne peux même pas m'offrir un " + objet + " à\r\n "
+    		parler("Je n'ai plus que " + argent + " sous en poche. Je ne peux mï¿½me pas m'offrir un " + objet + " ï¿½\r\n "
     				+ prix + " sous");
     	}
         
+    }
+    
+    public void faireConnaissanceAvec(Humain autreHumain) {
+        this.direBonjour();
+        autreHumain.direBonjour();
+        this.memoriser(autreHumain);
+        autreHumain.memoriser(this);
+    }
+    
+    protected void memoriser(Humain humain) {
+        if (nbConnaissances < TAILLE_MEMOIRE) {
+            memoire[nbConnaissances] = humain;
+            nbConnaissances++;
+        } else {
+            for (int i = 0; i < TAILLE_MEMOIRE - 1; i++) {
+                memoire[i] = memoire[i + 1];
+            }
+            memoire[TAILLE_MEMOIRE - 1] = humain;
+        }
+    }
+
+    public void listerConnaissance() {
+        if (nbConnaissances == 0) {
+            parler("Je ne connais encore personne.");
+            return;
+        }
+
+        StringBuilder texte = new StringBuilder("Je connais beaucoup de monde dont : ");
+        for (int i = 0; i < nbConnaissances; i++) {
+            texte.append(memoire[i].getNom());
+            if (i < nbConnaissances - 1) {
+                texte.append(", ");
+            }
+        }
+        parler(texte.toString());
     }
     
 
