@@ -38,5 +38,9 @@ public class Histoire {
         commercant1.listerConnaissance();
         ronin1.listerConnaissance();
         yakuza1.listerConnaissance();
+        
+        yakuza1.direBonjour();
+        
+        Samourai samourai1 = new Samourai("Laurent Nuñez", "Policier1", "délinquant", 80);
 	}
 }
