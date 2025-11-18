@@ -47,8 +47,7 @@ public class Traitre extends Samourai{
 		else {
 			int donArgent = getArgent() / 20;
 			int indexAleatoire = rnd.nextInt(nbConnaissances);
-			Humain humainChoisi = memoire[indexAleatoire];
-			
+			Humain humainChoisi = memoire[indexAleatoire];			
 			
 			parler("Bonjour l'ami ! Je voudrais vous aider en vous donnant " + donArgent + " sous.");
 			perdreArgent(donArgent);

@@ -53,5 +53,14 @@ public class Histoire {
         traitre1.faireLeGentil(humain1);
         traitre1.direBonjour();
         
+        GrandMere grandMere = new GrandMere("Grand-Mère", 10);
+        grandMere.faireConnaissanceAvec(commercant1);
+        grandMere.faireConnaissanceAvec(commercant2);
+        grandMere.faireConnaissanceAvec(ronin1);
+        grandMere.faireConnaissanceAvec(yakuza1);
+        grandMere.faireConnaissanceAvec(traitre1);
+        grandMere.faireConnaissanceAvec(samourai1);
+        grandMere.ragoter();
+ 
 	}
 }
