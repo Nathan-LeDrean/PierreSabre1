@@ -42,5 +42,7 @@ public class Histoire {
         yakuza1.direBonjour();
         
         Samourai samourai1 = new Samourai("Laurent Nuñez", "Policier1", "délinquant", 80);
+        samourai1.direBonjour();
+        samourai1.boire();
 	}
 }

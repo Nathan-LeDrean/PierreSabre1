@@ -33,7 +33,7 @@ public class Yakuza extends Humain{
     }
 
     public void gagner(int gain) {
-        gagnerArgent(gain);
+    	gagnerArgent(gain);
         reputation++;
         parler("Ce ronin pensait vraiment battre " + getNom() + " du clan de " +
                clan + " ? Je l'ai dépouillé de ses " + getArgent() + " sous.");

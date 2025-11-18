@@ -8,5 +8,15 @@ public class Samourai extends Ronin {
         super(nom, boissonFavorite, argent);
         this.seigneur = seigneur;
     }
+	@Override
+    public void direBonjour() {
+        super.direBonjour();
+        parler("Je suis fier de servir le seigneur " + seigneur + ".");
+	}
     
+	@Override
+    public void boire() {
+        parler("Qu'est-ce que je vais choisir comme boisson ? Tiens je vais prendre\n"
+        		+ " du " + getBoissonFavorite() + ".");
+    }
 }
