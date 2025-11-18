@@ -5,7 +5,7 @@ public class Humain {
 	private String boissonFavorite;
 	private int argent;
 	
-    protected static final int TAILLE_MEMOIRE = 30;   // pour 1d tu passeras à 3
+    protected static final int TAILLE_MEMOIRE = 30;   
     protected Humain[] memoire;
     protected int nbConnaissances = 0;
 	
